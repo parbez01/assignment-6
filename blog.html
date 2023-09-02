@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <p>bangladesh</p>
+    <section class="">
+        <p class="bg-sky-400 text-2xl text-center p-6 mt-4 font-bold">Discuss the scope of var, let, and const?</p>
+
+        <div class="grid grid-cols-3 gap-6 m-4">
+            <div class="bg-green-400 h-auto rounded-xl p-6 text-xl " >
+                <p> <span class="font-extrabold">var:
+                    <br>
+                </span>
+                    Function Scope: Variables declared with var are function-scoped, meaning they are visible throughout the function in which they are declared, even if they are declared inside blocks (if statements or loops).
+                    Hoisting: Variables declared with var are hoisted to the top of their containing function or global scope. This means you can use a var variable before it's declared in the code, although it will have an initial value of undefined.</p>
+            </div>
+            <div class="bg-red-400 h-auto rounded-xl p-6 text-xl" >
+                <p>
+                    <span class="font-extrabold">let:</span>
+                        <br>
+    
+                    Block Scope: Variables declared with let are block-scoped, which means they are limited to the block
+                    (inside curly braces) where they are defined.
+                    They are not hoisted to the top of their enclosing block.
+                    Temporal Dead Zone (TDZ): Variables declared with let have a temporal dead zone, which means you cannot
+                    access them before their declaration within
+                    the block scope. Trying to access a let variable before its declaration results in a ReferenceError.
+                </p>
+            </div>
+            <div class="bg-yellow-300 h-auto rounded-xl p-6 text-xl" >
+                <p>
+                    <span class="font-extrabold">const:
+                        <br>
+                    </span>
+                    Block Scope: Like let, variables declared with const are block-scoped.
+                    Immutability: Variables declared with const cannot be reassigned after their initial assignment.
+                    However, for objects and arrays declared with const,
+                    their properties or elements can be modified, but the reference itself cannot be changed.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+
+       <div class="grid grid-cols-2 mt-10 gap-6">
+        <div class=" text-xl ml-6 rounded-2xl">
+            <p class="bg-yellow-300 text-center p-6 rounded-xl drop-shadow-2xl"><span class="font-extrabold text-2xl">Tell us the use cases of null and undefined.</span><br>
+                Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value. The typeof() operator returns undefined for an undefined variable. The typeof() operator returns the type as an object for a variable whose value is assigned as null.
+            </p>
+        </div>
+        <div class="mr-6">
+            <p class="bg-teal-500 text-center p-6 text-xl rounded-xl drop-shadow-xl"> <span class="font-extrabold text-2xl">What do mean By Rest API?</span> <br> A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.</p>
+        </div>
+       </div>
+    </section>
+
+  
+
+      
+ 
 </body>
+
 </html>
-
-

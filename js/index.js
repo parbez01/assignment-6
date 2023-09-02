@@ -24,8 +24,8 @@ const handleLoadNews = async (categoryId) => {
     if (categoryId == 1005) {
      const p = document.createElement('p');
  p.className = " mx-auto gap-10 flex text-center items-center justify-center"
-  p.innerHTML = ` <img class="items-center block" src="./image/Icon.png" alt="">
-   <h1 class="text-4xl font-bold">Oops!! Sorry, There is no content here</h1> 
+  p.innerHTML = `<img class="items-center" src="./image/Icon.png" alt="">
+   <h1 class="text-xl lg:text-4xl font-bold">Oops!! Sorry, There is no content here</h1> 
    `
    details.innerHTML = '';
     details.appendChild(p) }
@@ -33,46 +33,65 @@ const handleLoadNews = async (categoryId) => {
         console.log('')
      }
 
+
+
+    //  empty.forEach((news)=>{
+    //     const div = document.createElement('div')
+    //     const time = news.others?.posted_date;
+    //     let hr = Math.floor(time/60);
+    //     let min = hr/60;
+    //     let minutes = parseInt(min);
+    //     let hour = parseFloat(minutes);
+    //     let minute = time%60;
+
+    //     div.innerHTML = 
+    //  })
     
+
 
 
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
     data.data?.forEach((news) => {
-        console.log(news?.authors[0].verified)
         const div = document.createElement('div');
         div.innerHTML = `
 
     <div class="card w-96 bg-base-100 shadow-xl ">
         <figure>
         <img class="h-60"
-         src=${news?.
-                thumbnail} alt="Shoes" /></figure>
+         src=${news?.thumbnail} alt="Shoes" />
+         
+         </figure>
         <div class="card-body">
             <div>
                 <div class="avatar online">
-                  <div class="w-14 rounded-full">
-                    <img
-                      src=${news?.authors[0].profile_picture}/>
-                  </div>
+                 
                 </div>
-              </div>
-         
+              </div>       
             <div>
-            <h2 class="card-title"> ${news?.title} </h2>
-            <p>${news?.authors[0].
-            profile_name}</p>
-                ${news?.verified == true?
-                '<img src="fi_10629607.svg"/>':' '}
-                ${console.log(news.verified)}
 
-            </div>
-            <p>${news?.others.views}</p>
-         
+
+           <div class="flex">
+           <div>
+           <img class="w-14 h-14 rounded-full"
+             src=${news?.authors[0].profile_picture}/>
+         </div>
+           <div class="ml-6">
+           <h2 class="card-title"> ${news?.title} </h2>
+           <p>${news?.authors[0].
+           profile_name}</p>
+           <p>${news?.others.views}</p> 
+           </div>
+           </div>
+
+           <div>
+           ${news?.verified == true?
+            '<img src="./image/fi_10629607.svg"/>':' '}
+           </div>                          
         </div>
       </div>
     `;
-    
+        details.innerHTML = '';           
         cardContainer.appendChild(div);
     })
 }
